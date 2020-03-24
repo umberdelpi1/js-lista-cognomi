@@ -16,11 +16,16 @@ var listaOrganizzata = listaCognomi.sort();
 console.log(listaCognomi);
 
 var listaN, contenutoPrecedente;
+var position;
 
 for ( var i = 0; i < listaCognomi.length; i++) {
   listaN = listaCognomi[i];
 
   console.log(listaN);
+
+  if (cognomeUtente == listaCognomi[i]) {
+    position = i;
+  }
 
   contenutoPrecedente = document.getElementById('cognomi').innerHTML;
 
@@ -29,3 +34,6 @@ for ( var i = 0; i < listaCognomi.length; i++) {
   document.getElementById('cognomi').innerHTML = contenutoPrecedente + "<li>" + listaN + "</li>";
 
 }
+ // Stampare all'interno della console la posizione del cognome all'interno della lista
+ console.log("Il tuo cognome: " + cognomeUtente + "nella lista console " + "è: " + i);
+ document.getElementById("cognomi2").innerHTML = "Il tuo cognome: " + cognomeUtente + "nella lista browser" + "è: " + position;
